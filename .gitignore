@@ -1,0 +1,9 @@
+# Fișiere obiect
+*.obj
+
+# Executabile
+*.exe
+
+# Fișiere temporare
+*.log
+*.tmp
