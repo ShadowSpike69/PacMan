@@ -1,7 +1,11 @@
 #include "Ghost.hpp"
 #include <cstdlib> 
 #include <ctime>   
+#include <iostream>
 
+void Ghost::draw() const {
+    std::cout << "Drawing ghost " << color << " at (" << x << ", " << y << ")\n";
+}
 void Ghost::move() {
     
     srand(time(nullptr));
@@ -13,7 +17,9 @@ void Ghost::move() {
         case 3: x++; break; 
     }
 }
-
+Ghost::Ghost(int x, int y, const std::string& color)
+    : x(x), y(y), color(color) {
+}
 int Ghost::getX() const {
     return x;
 }

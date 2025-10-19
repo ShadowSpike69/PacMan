@@ -2,6 +2,12 @@
 #include "InputHandler.hpp"
 #include <iostream>
 
+    bool isWall(int x, int y) const;
+    bool isPellet(int x, int y) const;
+    void eatPellet(int x, int y);
+void GameEngine::draw() const {
+    std::cout << "Drawing game engine state...\n";
+}
 void GameEngine::update() {
     InputHandler input;
     char direction = input.getInput();

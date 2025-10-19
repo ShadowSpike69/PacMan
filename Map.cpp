@@ -1,6 +1,9 @@
 #include "Map.hpp"
 #include <iostream>
 
+void Map::draw() const {
+    std::cout << "Drawing map of size " << width << "x" << height << "\n";
+}
 void Map::load() {
     grid = {
         {'W','W','W','W','W','W','W'},
@@ -9,15 +12,6 @@ void Map::load() {
         {'W','.','.','o','.','.','W'},
         {'W','W','W','W','W','W','W'}
     };
-}
-
-void Map::draw() const {
-    for (const auto& row : grid) {
-        for (char cell : row) {
-            std::cout << cell << ' ';
-        }
-        std::cout << '\n';
-    }
 }
 
 bool Map::isWall(int x, int y) const {
