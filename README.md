@@ -13,3 +13,8 @@ Structuri de date =
 -\Map\:labirintul jocului
 -\InputHandler\:gestioneaza tastele 
 -\CollisionManager\:verifica coliziunea
+
+## Construirea proiectului PacMan
+
+Pentru a compila proiectul manual folosiți fișierul `build.cmd`.
+
