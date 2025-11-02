@@ -1,7 +1,3 @@
-#pragma once
-#include "Renderable.hpp"
-#include <string>
-
 class Ghost : public Renderable {
 private:
     int x, y;
@@ -9,10 +5,20 @@ private:
     std::string color;
 
 public:
+    Ghost();
+    Ghost(int x, int y, const std::string& color);
+
     void draw() const override;
     void move();
     int getX() const;
     int getY() const;
     void resetPosition();
-    Ghost(int x, int y, const std::string& color);
+
+    void setX(int x);
+    void setY(int y);
+    void setScared(bool scared);
+    void setColor(const std::string& color);
+
+    void read(std::istream& in);
+    void print(std::ostream& out) const;
 };

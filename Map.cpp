@@ -27,3 +27,26 @@ void Map::eatPellet(int x, int y) {
         grid[y][x] = ' ';
     }
 }
+int Map::getWidth() const { return width; }
+int Map::getHeight() const { return height; }
+void Map::setWidth(int w) { width = w; }
+void Map::setHeight(int h) { height = h; }
+const auto& Map::getGrid() const { return grid; }
+void Map::setGrid(const decltype(grid)& newGrid) { grid = newGrid; }
+
+void Map::read(std::istream& in) {
+    for (int y = 0; y < MAP_HEIGHT; ++y)
+        for (int x = 0; x < MAP_WIDTH; ++x)
+            in >> grid[y][x];
+}
+
+void Map::print(std::ostream& out) const {
+    for (const auto& row : grid) {
+        for (char cell : row) out << cell << ' ';
+        out << '\n';
+    }
+}
+
+void Map::reset() {
+    load(); 
+}

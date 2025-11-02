@@ -26,4 +26,13 @@ public:
     int getX() const;
     int getY() const;
     void resetPosition();
+
+    void setX(int x);
+    void setY(int y);
+    void setLives(int lives);
+    void setName(const std::string& name);
+
+
+    void read(std::istream& in);
+    void print(std::ostream& out) const;
 };

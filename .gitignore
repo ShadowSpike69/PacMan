@@ -7,3 +7,9 @@
 # Fișiere temporare
 *.log
 *.tmp
+
+.vs/
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
