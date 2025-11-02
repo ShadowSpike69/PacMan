@@ -55,3 +55,17 @@ void Player::move(char direction) {
 int Player::getX() const { return x; }
 int Player::getY() const { return y; }
 void Player::resetPosition() { x = 0; y = 0; }
+
+
+void Player::setX(int x) { this->x = x; }
+void Player::setY(int y) { this->y = y; }
+void Player::setLives(int lives) { this->lives = lives; }
+void Player::setName(const std::string& name) { this->name = name; }
+
+void Player::read(std::istream& in) {
+    in >> name >> x >> y >> lives;
+}
+
+void Player::print(std::ostream& out) const {
+    out << "Player " << name << " at (" << x << ", " << y << ") with " << lives << " lives";
+}

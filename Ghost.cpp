@@ -33,3 +33,18 @@ void Ghost::resetPosition() {
     y = 3;
     isScared = false;
 }
+Ghost::Ghost() : x(0), y(0), isScared(false), color("red") {}
+
+void Ghost::setX(int x) { this->x = x; }
+void Ghost::setY(int y) { this->y = y; }
+void Ghost::setScared(bool scared) { isScared = scared; }
+void Ghost::setColor(const std::string& color) { this->color = color; }
+
+void Ghost::read(std::istream& in) {
+    in >> x >> y >> isScared >> color;
+}
+
+void Ghost::print(std::ostream& out) const {
+    out << "Ghost " << color << " at (" << x << ", " << y << ")"
+        << (isScared ? " [scared]" : "");
+}

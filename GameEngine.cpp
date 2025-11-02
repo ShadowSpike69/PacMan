@@ -2,9 +2,7 @@
 #include "InputHandler.hpp"
 #include <iostream>
 
-    bool isWall(int x, int y) const;
-    bool isPellet(int x, int y) const;
-    void eatPellet(int x, int y);
+
 void GameEngine::draw() const {
     std::cout << "Drawing game engine state...\n";
 }
@@ -33,3 +31,25 @@ void GameEngine::update() {
         std::cout << "Ai lovit un perete!\n";
     }
 }
+GameEngine::GameEngine() : score(0), lives(3) {}
+
+int GameEngine::getScore() const { return score; }
+void GameEngine::setScore(int s) { score = s; }
+int GameEngine::getLives() const { return lives; }
+void GameEngine::setLives(int l) { lives = l; }
+Map& GameEngine::getMap() { return map; }
+Player& GameEngine::getPacman() { return pacman; }
+std::vector<Ghost>& GameEngine::getGhosts() { return ghosts; }
+
+void GameEngine::read(std::istream& in) {
+    map.read(in);
+    pacman.read(in);
+    in >> score >> lives;
+}
+
+void GameEngine::print(std::ostream& out) const {
+    map.print(out);
+    pacman.print(out);
+    out << "Score: " << score << ", Lives: " << lives << "\n";
+}
+
