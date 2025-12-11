@@ -1,12 +1,28 @@
-﻿#include <iostream>
+﻿#include <SFML/Graphics.hpp>
+#include <nlohmann/json.hpp>
+#include <iostream>
 #include <vector>
 #include <memory>
 #include <algorithm>
 #include "Player.hpp"
 #include "Ghost.hpp"
 #include "Map.hpp"
+using json = nlohmann::json;
 
 int main() {
+    sf::RenderWindow window(sf::VideoMode(800, 600), "PacMan");
+    json score;
+    score["points"] = 0;
+
+    while (window.isOpen()) {
+        sf::Event event;
+        while (window.pollEvent(event)) {
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+        window.clear();
+        window.display();
+    }
     std::vector<std::shared_ptr<Player>> players;
     players.push_back(std::make_shared<Player>(1, 2, 3, "PacMan"));
     players.push_back(std::make_shared<Player>(3, 1, 2, "MsPacMan"));

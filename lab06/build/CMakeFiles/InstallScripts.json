@@ -1,0 +1,8 @@
+{
+	"InstallScripts" : 
+	[
+		"D:/Lc++/lab06/build/cmake_install.cmake",
+		"D:/Lc++/lab06/build/game_data/cmake_install.cmake"
+	],
+	"Parallel" : false
+}
